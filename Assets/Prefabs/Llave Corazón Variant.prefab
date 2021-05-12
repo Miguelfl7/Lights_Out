@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!65 &953749406
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5415981134132805527}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0299828, y: 1.7189188, z: 1.4333955}
+  m_Center: {x: 1.014994, y: -0.00000071336785, z: 1.848338e-15}
+--- !u!114 &953749405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5415981134132805527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d46b3b676ddada449a5ddbb713ffd6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdInteract: 1
+  holdDuration: 1
+  multipleUse: 0
+  isInteractable: 1
+  tooltipMessage: '[E] to interact'
+--- !u!1001 &5181400118498083526
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.498
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.529
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.334
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.69263345
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.142334
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.14233397
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69263345
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -23.225
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.098794505
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.098794505
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.098794505
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 421789c6391305d4c923f8b9bb2b27bf,
+        type: 3}
+      propertyPath: m_Name
+      value: "Llave Coraz\xF3n"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 421789c6391305d4c923f8b9bb2b27bf, type: 3}
+--- !u!1 &5415981134132805527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 421789c6391305d4c923f8b9bb2b27bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 5181400118498083526}
+  m_PrefabAsset: {fileID: 0}
