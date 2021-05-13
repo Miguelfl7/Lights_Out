@@ -5,8 +5,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class CharacterControllerHelper : MonoBehaviour
 {
-    private XRRig XRRig;
+    private XRRig xRRig;
     private CharacterController CharacterController;
+    private CharacterControllerDriver driver;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,15 +22,15 @@ public class CharacterControllerHelper : MonoBehaviour
 
         protected virtual void UpdateCharacterController()
         {
-            if (xRRig == null || m_CharacterController == null)
+            if (xRRig == null || CharacterController == null)
                 return;
 
-            var height = Mathf.Clamp(xRRig.cameraInRigSpaceHeight, m_MinHeight, m_MaxHeight);
+            var height = Mathf.Clamp(xRRig.cameraInRigSpaceHeight, driver.minHeight, driver.maxHeight);
 
             Vector3 center = xRRig.cameraInRigSpacePos;
-            center.y = height / 2f + m_CharacterController.skinWidth;
+            center.y = height / 2f + CharacterController.skinWidth;
 
-            m_CharacterController.height = height;
-            m_CharacterController.center = center;
+            CharacterController.height = height;
+            CharacterController.center = center;
         }
 }
