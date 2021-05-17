@@ -5,11 +5,20 @@ using UnityEngine;
 
 public class ControlDeLuces : MonoBehaviour
 {
-    Light luz;
+    public Light luzHijo;
+    MeshRenderer meshRenderer;
+    public Material emmisiveOff;
+    public Material emmisiveOn;
 
+    //public GameObject luz;
     private void Start()
     {
-        luz = GetComponent<Light>();
+        //luz = gameObject.transform.GetChild(1).gameObject;
+        luzHijo = GetComponentInChildren<Light>();
+
+        //luzHijo = luz.GetComponent<Light>();
+
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -17,7 +26,8 @@ public class ControlDeLuces : MonoBehaviour
         if (other.gameObject.tag == "IA")
         {
             //Debug.Log("Collision");
-            luz.enabled = false;
+            luzHijo.enabled = false;
+            meshRenderer.material = emmisiveOff;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -25,7 +35,8 @@ public class ControlDeLuces : MonoBehaviour
         if (other.gameObject.tag == "IA")
         {
             //Debug.Log("Collision OUT");
-            luz.enabled = true;
+            luzHijo.enabled = true;
+            meshRenderer.material = emmisiveOn;
         }
     }
 }
