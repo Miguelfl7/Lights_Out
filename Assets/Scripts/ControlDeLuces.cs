@@ -13,8 +13,10 @@ public class ControlDeLuces : MonoBehaviour
     //public GameObject luz;
     private void Start()
     {
+
         //luz = gameObject.transform.GetChild(1).gameObject;
         luzHijo = GetComponentInChildren<Light>();
+        //luzHijo.enabled = true;
 
         //luzHijo = luz.GetComponent<Light>();
 
@@ -25,6 +27,7 @@ public class ControlDeLuces : MonoBehaviour
     {
         if (other.gameObject.tag == "IA")
         {
+            Debug.Log("Trigger");
             //Debug.Log("Collision");
             luzHijo.enabled = false;
             meshRenderer.material = emmisiveOff;
