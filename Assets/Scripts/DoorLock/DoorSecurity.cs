@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorSecurity : MonoBehaviour
 {
@@ -11,44 +12,42 @@ public class DoorSecurity : MonoBehaviour
     /// </summary>
     public SecurityManager.SecurityLock doorSecurity;
 
-    public enum DoorState { open, close};
-    public DoorState doorState;
+    public Text uiTextInScreen;
+    public GameObject canvas;
+    Rigidbody rb;
 
 
     private void Start()
     {
-        doorAnimator = GetComponent<Animator>();
-
-        if (doorState == DoorState.open)
-        {
-            doorAnimator.SetTrigger("Open");
-        }
-        else
-        {
-            doorAnimator.SetTrigger("Close");
-        }
+        
+        rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true;
+        canvas.SetActive(false);
     }
     public void Open(Collider other)
     {
         PlayerKeySecurity playerSecurity = other.GetComponent<PlayerKeySecurity>();
         if (playerSecurity != null)
         {
+            canvas.SetActive(true);
             if (playerSecurity.playerSecurityLevel == doorSecurity)
             {
-                doorAnimator.SetTrigger("Go");
+                //doorAnimator.SetTrigger("Go");
+                uiTextInScreen.text = ("Has abierto la puerta");
+                rb.isKinematic = true;
+                Destroy(other.gameObject); 
+                
+
+            }
+            else
+            {
+                uiTextInScreen.text = ("La llave no es de esta puerta");
             }
         }
     }
 
-    public void Close(Collider other)
+    public void Exit(Collider other)
     {
-        PlayerKeySecurity playerSecurity = other.GetComponent<PlayerKeySecurity>();
-        if (playerSecurity != null)
-        {
-            if (playerSecurity.playerSecurityLevel == doorSecurity)
-            {
-                doorAnimator.SetTrigger("Go");
-            }
-        }
+        canvas.SetActive(false);
     }
 }

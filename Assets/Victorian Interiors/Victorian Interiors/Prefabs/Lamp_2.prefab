@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7439d4b414dbd4c85aa0adc9cbdd49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  luzHijo: {fileID: 0}
+  luzHijo: {fileID: 5126835080570482201}
   emmisiveOff: {fileID: 2100000, guid: 9c25775d90763d1499120e3b30b1d6af, type: 2}
   emmisiveOn: {fileID: 2100000, guid: a4fada28675201a409c5226fa5103e3e, type: 2}
 --- !u!65 &6514640985512552410
@@ -154,7 +154,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9150943, g: 0.8282608, b: 0.37121752, a: 1}
-  m_Intensity: 2.75
+  m_Intensity: 2.5
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
