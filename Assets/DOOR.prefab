@@ -634,5 +634,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorSecurity: 0
-  uiTextInScreen: {fileID: 0}
-  canvas: {fileID: 0}
+  uiTextInScreen: {fileID: 3867022493733976684}
+  canvas: {fileID: 3867022493635924293}

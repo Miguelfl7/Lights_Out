@@ -9,13 +9,21 @@ public class DoorSensor : MonoBehaviour
     public LockEvent exit;
     private void OnTriggerEnter(Collider other)
     {
-        print("Entra");
-        enter.Invoke(other);
+        if(other.gameObject.tag == "Key")
+        {
+            print("Entra");
+            enter.Invoke(other);
+        }
+
     }
     private void OnTriggerExit(Collider other)
     {
-        print("Sale");
-        exit.Invoke(other);
+        if(other.gameObject.tag == "Key")
+        {
+            print("Sale");
+            exit.Invoke(other);
+        }
+
     }
 
     [System.Serializable]

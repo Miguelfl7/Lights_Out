@@ -34,7 +34,7 @@ public class DoorSecurity : MonoBehaviour
             {
                 //doorAnimator.SetTrigger("Go");
                 uiTextInScreen.text = ("Has abierto la puerta");
-                rb.isKinematic = true;
+                rb.isKinematic = false;
                 Destroy(other.gameObject); 
                 
 
