@@ -23,7 +23,17 @@ public class ControlDeLuces : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "IA")
+        {
+            Debug.Log("Trigger");
+            //Debug.Log("Collision");
+            luzHijo.enabled = false;
+            meshRenderer.material = emmisiveOff;
+        }
+    }
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "IA")
         {

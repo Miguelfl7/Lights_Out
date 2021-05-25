@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5656267969354135}
   - component: {fileID: 783253110606165603}
   - component: {fileID: 8585390595958249295}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Plane001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 3810427751673792790}
   - component: {fileID: 3810427751673792791}
   - component: {fileID: 2949703327880122580}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: "Llave Coraz\xF3n Variant"
   m_TagString: Key
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 8803253506205632485}
   - component: {fileID: 2701191351484075298}
   - component: {fileID: 7444879297439625169}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Plane002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 4856429275857910333}
   - component: {fileID: 2424733998565463918}
   - component: {fileID: 816269156808650609}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CuerpoLLave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9207668809585968227}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

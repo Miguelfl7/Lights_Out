@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 870729835843888327}
   - component: {fileID: 7986736086050195860}
   - component: {fileID: 4909782205648187787}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: CuerpoLLave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 3844812882101868831}
   - component: {fileID: 7641618624780604376}
   - component: {fileID: 2891718710858494251}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Plane002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3746761484294029952}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 5720957764156458861}
   - component: {fileID: 5021047477126047897}
   - component: {fileID: 4059322010261277109}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Plane001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 5285891896392832082}
   - component: {fileID: 1838297273245088203}
   - component: {fileID: 5079227445898783759}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Llave Cuadrado Variant
   m_TagString: Key
   m_Icon: {fileID: 0}

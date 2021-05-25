@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1161316655651604256}
   - component: {fileID: 1934128420437682388}
   - component: {fileID: 7434497690720307704}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Plane001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 5923273847850824063}
   - component: {fileID: 7288593075339820361}
   - component: {fileID: 7807313213610092758}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Llave Estrella Variant
   m_TagString: Key
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5923273848963980169}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 7647881193816578386}
   - component: {fileID: 3852060063985980309}
   - component: {fileID: 8599708452971278694}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Plane002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 6011262833740473482}
   - component: {fileID: 3580266842889128409}
   - component: {fileID: 1970944385007055302}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: CuerpoLLave
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -39,7 +39,7 @@ public class Bengala : MonoBehaviour
         }
 
         bengala = GetComponent<Renderer>().material;
-        bengalaStates = BengalaStates.apagada;
+        bengalaStates = BengalaStates.encendida;
         Luz.SetActive(false);
 
         bengalaHoverStates = BengalaHoverStates.nothover;
