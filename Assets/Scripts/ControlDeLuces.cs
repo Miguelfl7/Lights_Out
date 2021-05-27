@@ -27,7 +27,6 @@ public class ControlDeLuces : MonoBehaviour
     {
         if (other.gameObject.tag == "IA")
         {
-            Debug.Log("Trigger");
             //Debug.Log("Collision");
             luzHijo.enabled = false;
             meshRenderer.material = emmisiveOff;
@@ -37,7 +36,6 @@ public class ControlDeLuces : MonoBehaviour
     {
         if (other.gameObject.tag == "IA")
         {
-            Debug.Log("Trigger");
             //Debug.Log("Collision");
             luzHijo.enabled = false;
             meshRenderer.material = emmisiveOff;

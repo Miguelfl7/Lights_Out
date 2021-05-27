@@ -5,14 +5,14 @@ using UnityEngine.XR;
 
 public class Bengala : MonoBehaviour
 {
-    GameObject bengalaGameObject;
+    public GameObject bengalaGameObject;
     public Material bengalaMaterial;
     public Material bengalaMaterialEncendida;
     Material bengala;
 
     public GameObject Luz;
 
-    public enum BengalaStates {encendiendose,apagada, apagandose, rota }
+    public enum BengalaStates {encendiendose,apagada, apagandose, rota, trance }
 
     public BengalaStates bengalaStates;
 
@@ -24,14 +24,19 @@ public class Bengala : MonoBehaviour
 
     public float contadorEncendiendose = 0.65f;
     public float contadorApagandose = 5f;
-    Light light;
+    public Light light;
     public float rangoDeBengalaDeseado;
     public float intensidadDeBengalaDeseado;
+    Animator animator;
+
+    
     private void Start()
     {
 
         light = Luz.GetComponent<Light>();
         light.range = 0;
+        light.intensity = 0;
+        animator = GetComponent<Animator>();
 
         bengalaGameObject = GetComponent<GameObject>();
 
@@ -61,27 +66,34 @@ public class Bengala : MonoBehaviour
 
     private void Update()
     {
-        targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButton);
+        targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButton);
 
-        if (secondaryButton && bengalaHoverStates == BengalaHoverStates.hover && bengalaStates == BengalaStates.apagada)
+        if (primaryButton && bengalaHoverStates == BengalaHoverStates.hover && bengalaStates == BengalaStates.apagada)
         {
-            //StartCoroutine(EncenderBengala());
+            bengalaStates = BengalaStates.trance;
+        }
+
+        if (bengalaStates == BengalaStates.trance)
+        {
+            Luz.SetActive(true);
+            bengala.CopyPropertiesFromMaterial(bengalaMaterialEncendida);
             bengalaStates = BengalaStates.encendiendose;
         }
+
+
         if(bengalaStates == BengalaStates.encendiendose)
         {
-            CounterEncendida();
+            animator.SetTrigger("In");
         }
 
         if(bengalaStates == BengalaStates.apagandose)
         {
-            CounterApagada();
+            animator.SetTrigger("Fin");
         }
 
         if(bengalaStates == BengalaStates.rota)
         {
-            //Luz.SetActive(false);
-            bengalaGameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
     public void OnHoverEnter()
@@ -94,73 +106,15 @@ public class Bengala : MonoBehaviour
         bengalaHoverStates = BengalaHoverStates.nothover; 
     }
 
-    /*IEnumerator EncenderBengala()
+    public void CambioToApagandose()
     {
-        StartCoroutine(Contador());
-        if (contadorEncendiendose <= 0)
-        {
-            bengala.CopyPropertiesFromMaterial(bengalaMaterialEncendida);
-            bengalaStates = BengalaStates.encendiendose;
-            Luz.SetActive(true);
-        }
-        else if (bengalaStates == BengalaStates.encendiendose)
-        {
-            bengala.CopyPropertiesFromMaterial(bengalaMaterial);
-            bengalaStates = BengalaStates.apagada;
-            Luz.SetActive(false);
-        }
-    }
-    IEnumerator Contador()
-    {
-        contadorEncendiendose -= Time.deltaTime;
-        yield return null;
-    }*/
-    void CounterEncendida()
-    {
-
-        bengala.CopyPropertiesFromMaterial(bengalaMaterialEncendida);
-        Luz.SetActive(true);
-        light.range += rangoDeBengalaDeseado / (contadorEncendiendose * Time.deltaTime);
-        light.intensity += intensidadDeBengalaDeseado / (contadorEncendiendose * Time.deltaTime);
-
-        if(light.range >= rangoDeBengalaDeseado)
-        {
-            light.range = rangoDeBengalaDeseado;
-        }
-
-        if (light.intensity >= intensidadDeBengalaDeseado)
-        {
-            light.intensity = intensidadDeBengalaDeseado;
-        }
-
-        if (light.range >= rangoDeBengalaDeseado && light.intensity >= intensidadDeBengalaDeseado)
-        {
-            bengalaStates = BengalaStates.apagandose;
-        }
+        bengalaStates = BengalaStates.apagandose;
     }
 
-
-    void CounterApagada()
+    public void CambioToRota()
     {
-
-        bengala.CopyPropertiesFromMaterial(bengalaMaterialEncendida);
-        Luz.SetActive(true);
-        light.range -= rangoDeBengalaDeseado / (contadorApagandose * Time.deltaTime);
-        light.intensity -= intensidadDeBengalaDeseado / (contadorApagandose * Time.deltaTime);
-
-        if(light.range <= 0)
-        {
-            light.range = 0;
-        }
-
-        if (light.intensity <= 0)
-        {
-            light.intensity = 0;
-        }
-
-        if (light.range <= 0 && light.intensity <= 0)
-        {
-            bengalaStates = BengalaStates.rota;
-        }
+        bengalaStates = BengalaStates.rota;
     }
+    
+
 }
