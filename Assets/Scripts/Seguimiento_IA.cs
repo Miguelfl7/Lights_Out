@@ -14,6 +14,8 @@ public class Seguimiento_IA: MonoBehaviour
     public enum IAStates {fijo, otro}
     public IAStates iaStates;
 
+    public Animator anim;
+
     [SerializeField]
     Transform otroPosition;
     void Start()
@@ -23,6 +25,7 @@ public class Seguimiento_IA: MonoBehaviour
         iaStates = IAStates.fijo;
         otroPosition = target;
 
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,12 +34,15 @@ public class Seguimiento_IA: MonoBehaviour
         if(iaStates == IAStates.fijo)
         {
             DestinoFijo();
+            
+
             nav.speed = speed;
         }
 
         if(iaStates == IAStates.otro)
         {
             DestinoRandom();
+            
             nav.speed = 100;
         }
         
@@ -57,7 +63,6 @@ public class Seguimiento_IA: MonoBehaviour
         Bengala bengala = other.GetComponent<Bengala>();
         if(bengala != null)
         {
-            Debug.Log("Hace colision con la bengala");
             if(bengala.bengalaStates == Bengala.BengalaStates.encendiendose || bengala.bengalaStates == Bengala.BengalaStates.apagandose && other.gameObject.tag == "Bengala" && iaStates == IAStates.fijo)
             {
                 StartCoroutine(EscapeBengala());
@@ -68,18 +73,16 @@ public class Seguimiento_IA: MonoBehaviour
 
     IEnumerator EscapeBengala()
     {
-
-        Debug.Log("esta en la corrutina");
-
         int origenGenerator = Random.Range(0, puntoOrigen.Length);
         otroPosition = puntoOrigen[origenGenerator];
-
-
+        
+        anim.SetTrigger("Defend");
         iaStates = IAStates.otro;
 
 
         yield return new WaitForSeconds(30);
 
         iaStates = IAStates.fijo;
+        anim.SetTrigger("Pursuit");
     }
 }
