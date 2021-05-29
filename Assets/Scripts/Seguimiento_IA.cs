@@ -18,12 +18,23 @@ public class Seguimiento_IA: MonoBehaviour
 
     [SerializeField]
     Transform otroPosition;
+
+    public AudioClip[] audioClips;
+    [Range(0,1)]
+
+    AudioSource audioSource;
+
+
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
         nav.speed = speed;
         iaStates = IAStates.fijo;
         otroPosition = target;
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audioClips[0];
+        audioSource.Play();
 
         anim = GetComponent<Animator>();
     }
@@ -76,6 +87,9 @@ public class Seguimiento_IA: MonoBehaviour
         int origenGenerator = Random.Range(0, puntoOrigen.Length);
         otroPosition = puntoOrigen[origenGenerator];
         
+        audioSource.clip = audioClips[0];
+        audioSource.Play();
+
         anim.SetTrigger("Defend");
         iaStates = IAStates.otro;
 

@@ -9,10 +9,16 @@ public class ColliderAttack : MonoBehaviour
     public GameObject ia;
     Seguimiento_IA iaStates;
 
+    public AudioClip[] audioClips;
+    [Range(0,1)]
+
+    AudioSource audioSource;
+
     private void Start()
     {
         anim = ia.GetComponent<Animator>();
         iaStates = GetComponent<Seguimiento_IA>();
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -23,6 +29,8 @@ public class ColliderAttack : MonoBehaviour
             if(iaStates.iaStates == Seguimiento_IA.IAStates.fijo)
             {
                 anim.SetTrigger("Attack");
+                audioSource.clip = audioClips[0];
+                audioSource.Play();
             }
        }
     }
@@ -34,11 +42,15 @@ public class ColliderAttack : MonoBehaviour
             if(iaStates.iaStates == Seguimiento_IA.IAStates.otro)
             {
                 anim.SetTrigger("Defend");
+                audioSource.clip = audioClips[1];
+                audioSource.Play();
             }
 
             else if(iaStates.iaStates == Seguimiento_IA.IAStates.fijo)
             {
                 anim.SetTrigger("Defend");
+                audioSource.clip = audioClips[1];
+                audioSource.Play();
             }
         
         }

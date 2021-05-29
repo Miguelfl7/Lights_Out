@@ -19,6 +19,13 @@ public class Linterna : MonoBehaviour
     public BengalaHoverStates bengalaHoverStates;
 
     InputDevice targetDevice;
+
+    public AudioClip[] audioClips;
+    [Range(0,1)]
+
+    AudioSource audioSource;
+
+
     private void Start()
     {
         //Inicializacion para los controles de los mandos VR
@@ -35,7 +42,7 @@ public class Linterna : MonoBehaviour
 
         if(devices.Count > 0)
         {
-                targetDevice = devices[0];
+            targetDevice = devices[0];
         }
 
         bengala = GetComponent<Renderer>().material;
@@ -43,6 +50,9 @@ public class Linterna : MonoBehaviour
         Luz.SetActive(true);
 
         bengalaHoverStates = BengalaHoverStates.nothover;
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audioClips[0];
     }
 
     private void Update()
@@ -56,12 +66,15 @@ public class Linterna : MonoBehaviour
                 bengala.CopyPropertiesFromMaterial(bengalaMaterialEncendida);
                 bengalaStates = BengalaStates.encendida;
                 Luz.SetActive(true);
+                
+                audioSource.Play();
             }
             else if (bengalaStates == BengalaStates.encendida)
             {
                 bengala.CopyPropertiesFromMaterial(bengalaMaterial);
                 bengalaStates = BengalaStates.apagada;
                 Luz.SetActive(false);
+                audioSource.Play();
             }
         }
     }

@@ -15,11 +15,14 @@ public class DoorSecurity : MonoBehaviour
     public Text uiTextInScreen;
     public GameObject canvas;
     Rigidbody rb;
-
+    public AudioClip[] audioClips;
+    [Range(0,1)]
+    public float volume;
+    AudioSource audioSource;
 
     private void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
         canvas.SetActive(false);
@@ -41,13 +44,24 @@ public class DoorSecurity : MonoBehaviour
                 //doorAnimator.SetTrigger("Go");
                 uiTextInScreen.text = ("Has abierto la puerta");
                 rb.isKinematic = false;
-                key.SetActive(false);
                 
+                audioSource.clip = audioClips[0];
+                audioSource.volume = volume;
+                audioSource.Play();
+                key.SetActive(false);
 
+                yield return new WaitForSeconds(2);
+                audioSource.Stop();
+
+                audioSource.clip = audioClips[2];
+                audioSource.Play();
             }
             else if (playerSecurity.playerSecurityLevel != doorSecurity)
             {
                 uiTextInScreen.text = ("La llave no es de esta puerta");
+                audioSource.clip = audioClips[1];
+                audioSource.volume = volume;
+                audioSource.Play();
             }
         }
         yield return new WaitForSeconds(5);
