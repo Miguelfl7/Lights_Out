@@ -17,7 +17,6 @@ public class DoorSecurity : MonoBehaviour
     Rigidbody rb;
     public AudioClip[] audioClips;
     [Range(0,1)]
-    public float volume;
     AudioSource audioSource;
 
     private void Start()
@@ -46,12 +45,10 @@ public class DoorSecurity : MonoBehaviour
                 rb.isKinematic = false;
                 
                 audioSource.clip = audioClips[0];
-                audioSource.volume = volume;
                 audioSource.Play();
                 key.SetActive(false);
 
-                yield return new WaitForSeconds(2);
-                audioSource.Stop();
+                yield return new WaitForSeconds(1);
 
                 audioSource.clip = audioClips[2];
                 audioSource.Play();
@@ -60,7 +57,6 @@ public class DoorSecurity : MonoBehaviour
             {
                 uiTextInScreen.text = ("La llave no es de esta puerta");
                 audioSource.clip = audioClips[1];
-                audioSource.volume = volume;
                 audioSource.Play();
             }
         }

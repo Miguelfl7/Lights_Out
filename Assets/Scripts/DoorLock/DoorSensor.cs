@@ -7,11 +7,23 @@ public class DoorSensor : MonoBehaviour
 {
     public LockEvent enter;
     public LockEvent exit;
+
+    
+    public AudioClip[] audioClips;
+    [Range(0,1)]
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Key")
         {
             print("Entra");
+            //audioSource.clip = audioClips[0];
+            //audioSource.Play();
             enter.Invoke(other);
         }
 

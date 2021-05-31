@@ -357,6 +357,15 @@ MonoBehaviour:
       m_Calls: []
   m_OnHoverEntered:
     m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5079227445898783759}
         m_MethodName: CogerLlave
@@ -369,7 +378,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5079227445898783759}
@@ -383,15 +392,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
   m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
@@ -450,7 +450,6 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 24d32252109084e48855e120c27955e0, type: 3}
   - {fileID: 8300000, guid: 00c45451b2fd1b94ab7be9b5149fb786, type: 3}
-  volume: 0
 --- !u!82 &6032543297782539583
 AudioSource:
   m_ObjectHideFlags: 0
