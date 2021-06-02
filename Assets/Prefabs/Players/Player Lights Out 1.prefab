@@ -1234,6 +1234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSecurityLevel: 0
+  audioClips: []
 --- !u!114 &4216739782037119011
 MonoBehaviour:
   m_ObjectHideFlags: 0
