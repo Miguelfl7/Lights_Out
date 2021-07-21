@@ -51,6 +51,18 @@ public class ControlBotonesInicio : MonoBehaviour
         Application.Quit();
     }
 
+    //Para cargar el juego en PC
+    public void PC(string Juego_PC)
+    {
+        SceneManager.LoadScene(Juego_PC);
+    }
+
+    //Para cargar el juego en Realidad Virtual
+    public void VR(string Juego_VR)
+    {
+        SceneManager.LoadScene(Juego_VR);
+    }
+
     public void VolumenAudio(float volume)
     {
         Debug.Log(volume);

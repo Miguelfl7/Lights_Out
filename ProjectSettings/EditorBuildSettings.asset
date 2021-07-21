@@ -9,16 +9,37 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/ProyectoFinal/CanvasInicio.unity
+    path: Assets/Scenes/ProyectoFinal/Inicio.unity
+    guid: 1f06758fe5cd6f649b25290403946d5c
+  - enabled: 1
+    path: Assets/Scenes/ProyectoFinal/CanvasInicio_PC.unity
+    guid: 885c6a6419e62d74192646b0696aa18c
+  - enabled: 1
+    path: Assets/Scenes/ProyectoFinal/CanvasInicio_VR.unity
     guid: b743f3fa808ae74428e32b58a4642d91
   - enabled: 1
-    path: Assets/Scenes/ProyectoFinal/Juego.unity
+    path: Assets/Scenes/ProyectoFinal/Juego_PC.unity
+    guid: 4e18409f44c7c1b42aaae14b25ecd2cd
+  - enabled: 1
+    path: Assets/Scenes/ProyectoFinal/Juego_VR.unity
     guid: c37abff27cfbeaf49b9a2a4243a13283
   - enabled: 1
-    path: Assets/Scenes/ProyectoFinal/CanvasFin.unity
+    path: Assets/Scenes/ProyectoFinal/CanvasFin_PC.unity
+    guid: 92ec2baa762f75e499510e5511f4ad00
+  - enabled: 1
+    path: Assets/Scenes/ProyectoFinal/CanvasFin_VR.unity
     guid: 9353e0f1d7a81b644b403c3bf461f8f6
   - enabled: 1
-    path: Assets/Scenes/ProyectoFinal/Muerte.unity
+    path: Assets/Scenes/ProyectoFinal/CanvasVictoriaFin_VR.unity
+    guid: 2f4b3b2f12849db419ab8a6485b4c2ee
+  - enabled: 1
+    path: Assets/Scenes/ProyectoFinal/CanvasVictoriaFin_PC.unity
+    guid: 5872c9f57b1a03249976dec3515fecb8
+  - enabled: 1
+    path: Assets/Scenes/ProyectoFinal/Muerte_PC.unity
+    guid: 850f3ddc829f3f745984284fbcf249fe
+  - enabled: 1
+    path: Assets/Scenes/ProyectoFinal/Muerte_VR.unity
     guid: 89f713073195f5d4ea590d7d2fa77cf9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 089955e1e20a4ca4d9ee239b0889626d,
